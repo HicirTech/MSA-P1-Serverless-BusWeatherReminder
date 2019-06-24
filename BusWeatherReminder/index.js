@@ -24,6 +24,6 @@ function sendMessage(messageBody) {
     twilioClient.messages.create({
         to: SMSTarget,
         from: SMSSource,
-        body: current_hour + 'Just a 5 minute reminder to keep your posture up'
+        body:messageBody
     })
 }
