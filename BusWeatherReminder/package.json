@@ -1,0 +1,21 @@
+{
+  "name": "busweatherreminder",
+  "version": "0.0.1",
+  "description": "Every daily seny you a message before you wake up, with the weather information, any you bus stop time table as well. This project is used for Phase 1 Assignment MSA 2019.",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder.git"
+  },
+  "author": "Zeting Luo",
+  "bugs": {
+    "url": "https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/issues"
+  },
+  "homepage": "https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder#readme",
+  "dependencies": {
+    "twilio": "^3.32.0"
+  }
+}
