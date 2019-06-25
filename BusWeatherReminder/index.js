@@ -12,7 +12,7 @@ module.exports = async function (context, myTimer) {
     console.log('[DEBUG LABLE: FUNCTION HEAD]');
     // sendMessage('Message testing');
     var sender = require('./MessageSender.js');
-    sender.methods.sentBody('TEXT BY MODULE');
+    sender.sendMethod('simpler module test');
     return console.log('[DEBUG LABLE: FUNCTION END]');
 };
 

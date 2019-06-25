@@ -17,4 +17,4 @@ function sendBody(messageBody) {
 
 methods.sentBody = sendBody;
 
-exports.methods = methods;
+exports.sendMethod = sendBody;
