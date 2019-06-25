@@ -14,9 +14,9 @@ module.exports = async function (context, myTimer) {
     }
 
     //My code start here
-    context.log('[DEBUG LABLE: FUNCTION HEAD]');
+    console.log('[DEBUG LABLE: FUNCTION HEAD]');
     sendMessage('Message testing');
-    return context.log('[DEBUG LABLE: FUNCTION END]');
+    return console.log('[DEBUG LABLE: FUNCTION END]');
 };
 
 //help function
