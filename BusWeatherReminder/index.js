@@ -1,5 +1,4 @@
-
-
+let sender = require('./MessageSender.js');
 //function entry 
 module.exports = async function (context, myTimer) {
     //Default code
@@ -9,10 +8,8 @@ module.exports = async function (context, myTimer) {
     }
 
     //My code start here
-    console.log('[DEBUG LABLE: FUNCTION HEAD]');
-    // sendMessage('Message testing');
-    var sender = require('./MessageSender.js');
-    sender.sendMethod('simpler module test');
-    return console.log('[DEBUG LABLE: FUNCTION END]');
+    context.log('[DEBUG LABLE: FUNCTION HEAD]');
+    sender.sendBody('Fucntion acting like object and exports to index.js');
+    return context.log('[DEBUG LABLE: FUNCTION END]');
 };
 
