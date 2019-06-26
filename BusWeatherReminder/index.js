@@ -1,4 +1,5 @@
 let sender = require('./MessageSender.js');
+let weatherLoader = require('./WeatherLoader.js');
 //function entry 
 module.exports = async function (context, myTimer) {
     //Default code
@@ -9,7 +10,9 @@ module.exports = async function (context, myTimer) {
 
     //My code start here
     context.log('[DEBUG LABLE: FUNCTION HEAD]');
-    sender.sendBody('Fucntion acting like object and exports to index.js');
+
+    
+    sender.sendBody(weatherLoader.getUrl()+'Fucntion acting like object and exports to index.js');
+
     return context.log('[DEBUG LABLE: FUNCTION END]');
 };
-

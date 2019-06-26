@@ -16,6 +16,8 @@
   },
   "homepage": "https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder#readme",
   "dependencies": {
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
     "twilio": "^3.32.0"
   }
 }
