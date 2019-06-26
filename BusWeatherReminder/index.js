@@ -11,12 +11,26 @@ module.exports = async function (context, myTimer) {
     weatherLoader.getJSON().then(
         function(result){
             context.log('testing');
-            let temp = weatherLoader.kelvinToCelsius(result.list[0].main.temp);
-            sender.sendBody('Current temp is '+temp);
+            var list =result.list[0].main;
+            let temp = weatherLoader.kelvinToCelsius(list.temp).toFixed(2);
+            let lowTemp = weatherLoader.kelvinToCelsius(list.temp_min).toFixed(2);
+            let highTemp =  weatherLoader.kelvinToCelsius(list.temp_max).toFixed(2);
+            let resultString = 'Current temp is '+temp+' Higher temp is '+highTemp+' lower temp is '+lowTemp+'. Today most likely is '+result.list[0].weather[0].description;
+            sender.sendBody(resultString);
         }
     )
+
     //My code start here
     context.log('[DEBUG LABLE: FUNCTION HEAD]');
-
     return context.log('[DEBUG LABLE: FUNCTION END]');
 };
+// weatherLoader.getJSON().then(
+//     function(result){
+//         var list =result.list[0].main;
+//         let temp = weatherLoader.kelvinToCelsius(list.temp).toFixed(2);
+//         let lowTemp = weatherLoader.kelvinToCelsius(list.temp_min).toFixed(2);
+//         let highTemp =  weatherLoader.kelvinToCelsius(list.temp_max).toFixed(2);
+//         console.log(result.list[0].weather[0].description);
+//         console.log('Current temp is '+temp+' Higher temp is '+highTemp+' lower temp is '+lowTemp+'. Today most likely is '+result.list[0].weather[0].description);
+//     }
+// )
