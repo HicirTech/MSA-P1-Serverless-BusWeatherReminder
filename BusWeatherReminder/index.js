@@ -8,11 +8,15 @@ module.exports = async function (context, myTimer) {
         context.log('JavaScript is running late!');
     }
 
+    weatherLoader.getJSON().then(
+        function(result){
+            sender.sendBody(result.list[0].weather+'Fucntion acting like object and exports to index.js');
+        }
+    )
     //My code start here
     context.log('[DEBUG LABLE: FUNCTION HEAD]');
 
     
-    sender.sendBody(weatherLoader.getUrl()+'Fucntion acting like object and exports to index.js');
 
     return context.log('[DEBUG LABLE: FUNCTION END]');
 };
