@@ -11,9 +11,8 @@ module.exports = async function (context, myTimer) {
     weatherLoader.getJSON().then(
         function(result){
             context.log('testing');
-            context.log(result);
-
-            //sender.sendBody(result.list[0].weather[0]+'Fucntion acting like object and exports to index.js');
+            let temp = weatherLoader.kelvinToCelsius(result.list[0].main.temp);
+            sender.sendBody('Current temp is '+temp);
         }
     )
     //My code start here
