@@ -7,7 +7,6 @@ module.exports = async function (context, myTimer) {
     if (myTimer.IsPastDue) {
         context.log('JavaScript is running late!');
     }
-
     weatherLoader.getJSON().then(
         function (result) {
             context.log('testing');
@@ -33,8 +32,8 @@ module.exports = async function (context, myTimer) {
 //         let temp = weatherLoader.kelvinToCelsius(list.temp).toFixed(2);
 //         let lowTemp = weatherLoader.kelvinToCelsius(list.temp_min).toFixed(2);
 //         let highTemp =  weatherLoader.kelvinToCelsius(list.temp_max).toFixed(2);
-//         console.log(result.list[0].weather[0].description);
+//         console.log(result);
 
-//         console.log('Current temp is '+temp+' Higher temp is '+highTemp+' lower temp is '+lowTemp+'. Today most likely is '+result.list[0].weather[0].description);
+//       //  console.log('Current temp is '+temp+' Higher temp is '+highTemp+' lower temp is '+lowTemp+'. Today most likely is '+result.list[0].weather[0].description);
 //     }
 // )
