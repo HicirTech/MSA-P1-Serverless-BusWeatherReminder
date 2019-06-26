@@ -11,7 +11,7 @@ module.exports = async function (context, myTimer) {
     weatherLoader.getJSON().then(
         function(result){
             console.log('testing');
-            sender.sendBody(result.list[0].weather+'Fucntion acting like object and exports to index.js');
+            sender.sendBody(result.list[0].weather[0]+'Fucntion acting like object and exports to index.js');
         }
     )
     //My code start here
