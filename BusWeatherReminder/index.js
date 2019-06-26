@@ -9,13 +9,16 @@ module.exports = async function (context, myTimer) {
     }
 
     weatherLoader.getJSON().then(
-        function(result){
+        function (result) {
             context.log('testing');
-            var list =result.list[0].main;
+            var list = result.list[0].main;
             let temp = weatherLoader.kelvinToCelsius(list.temp).toFixed(2);
             let lowTemp = weatherLoader.kelvinToCelsius(list.temp_min).toFixed(2);
-            let highTemp =  weatherLoader.kelvinToCelsius(list.temp_max).toFixed(2);
-            let resultString = 'Current temp is '+temp+' Higher temp is '+highTemp+' lower temp is '+lowTemp+'. Today most likely is '+result.list[0].weather[0].description;
+            let highTemp = weatherLoader.kelvinToCelsius(list.temp_max).toFixed(2);
+            let resultString = 'Current temp is ' + temp + '°C'+
+            ' Higher temp is ' + highTemp + '°C'+
+            ' lower temp is ' + lowTemp + '°C'+
+            '. Today most likely is ' + result.list[0].weather[0].description;
             sender.sendBody(resultString);
         }
     )
