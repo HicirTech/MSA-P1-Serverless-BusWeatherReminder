@@ -15,10 +15,10 @@ module.exports = async function (context, myTimer) {
             let temp = weatherLoader.kelvinToCelsius(list.temp).toFixed(2);
             let lowTemp = weatherLoader.kelvinToCelsius(list.temp_min).toFixed(2);
             let highTemp = weatherLoader.kelvinToCelsius(list.temp_max).toFixed(2);
-            let resultString = 'Current temp is ' + temp + '°C'+
-            ' Higher temp is ' + highTemp + '°C'+
-            ' lower temp is ' + lowTemp + '°C'+
-            '. Today most likely is ' + result.list[0].weather[0].description;
+            let resultString = 'Current temp is ' + temp + '°C' +
+                ' Higher temp is ' + highTemp + '°C' +
+                ' lower temp is ' + lowTemp + '°C' +
+                '. Today most likely is ' + result.list[0].weather[0].description;
             sender.sendBody(resultString);
         }
     )
@@ -34,6 +34,7 @@ module.exports = async function (context, myTimer) {
 //         let lowTemp = weatherLoader.kelvinToCelsius(list.temp_min).toFixed(2);
 //         let highTemp =  weatherLoader.kelvinToCelsius(list.temp_max).toFixed(2);
 //         console.log(result.list[0].weather[0].description);
+
 //         console.log('Current temp is '+temp+' Higher temp is '+highTemp+' lower temp is '+lowTemp+'. Today most likely is '+result.list[0].weather[0].description);
 //     }
 // )
