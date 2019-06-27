@@ -43,6 +43,6 @@ function busStringMakeUp(result) {
     var targetStop = atLoader.stopCode;
     var targetBusTime = atLoader.getNextBus(result);
     let resultString = 'Your bus ' + targetBus + ' will arrive at stop ' + targetStop + ' at ' + targetBusTime+'.';
-    return resultString
+    return resultString;
 }
 
