@@ -25,11 +25,11 @@ var ATstopReciver = {
                     resultSet.response[1] : resultSet.response[2];
         });
     },
-    getNextBus(result){
+    getNextBus(result) {
         var targerBusTime = 'null';
         var schedule = result.schedule;
-        for(i=0;i!=schedule.length;i++){
-            if(schedule[i]>this.targetTime){
+        for (i = 0; i != schedule.length; i++) {
+            if (schedule[i] > this.targetTime) {
                 targerBusTime = schedule[i];
                 break;
             }
@@ -37,6 +37,6 @@ var ATstopReciver = {
         return targerBusTime;
     }
 }
-module.exports=ATstopReciver;
+module.exports = ATstopReciver;
 ATstopReciver.getTimeTable().then(
     function (result) { console.log(ATstopReciver.getNextBus(result)); });

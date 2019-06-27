@@ -4,6 +4,8 @@ let atLoader = require('./ATLoader.js');
 
 //function entry 
 module.exports = async function (context, myTimer) {
+    
+    context.log('[DEBUG LABLE: FUNCTION HEAD]');
     //Default code
     var timeStamp = new Date().toISOString();
     if (myTimer.IsPastDue) {
@@ -22,7 +24,6 @@ module.exports = async function (context, myTimer) {
         }
     );
 
-    context.log('[DEBUG LABLE: FUNCTION HEAD]');
     return context.log('[DEBUG LABLE: FUNCTION END]');
 };
 
@@ -33,16 +34,15 @@ function weatherStringMakeUp(result) {
     let lowTemp = weatherLoader.kelvinToCelsius(list.temp_min).toFixed(2);
     let highTemp = weatherLoader.kelvinToCelsius(list.temp_max).toFixed(2);
     let resultString = 'Hey good morning, current temperature is ' + temp + '°C' +
-        ', today\'s highest temperature is ' + highTemp + '°C' +
-        ', and lowest temperature is ' + lowTemp + '°C' +
-        '. Today\'s Weather is: ' + result.list[0].weather[0].description + '.';
+        // ', today\'s highest temperature is ' + highTemp + '°C' +
+        // ', and lowest temperature is ' + lowTemp + '°C' +
+        '. Today\'s Weather is: ' + result.list[0].weather[0].description + '. ';
     return resultString;
 }
 function busStringMakeUp(result) {
     var targetBus = atLoader.targetBus;
     var targetStop = atLoader.stopCode;
     var targetBusTime = atLoader.getNextBus(result);
-    let resultString = 'Your bus ' + targetBus + ' will arrive at stop ' + targetStop + ' at ' + targetBusTime+'.';
+    let resultString = 'Your bus ' + targetBus + ' will arrive at stop ' + targetStop + ' at ' + targetBusTime + '.';
     return resultString;
 }
-
