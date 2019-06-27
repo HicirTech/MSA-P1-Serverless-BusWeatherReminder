@@ -4,8 +4,6 @@ let atLoader = require('./ATLoader.js');
 
 //function entry 
 module.exports = async function (context, myTimer) {
-    
-    context.log('[DEBUG LABLE: FUNCTION HEAD]');
     //Default code
     var timeStamp = new Date().toISOString();
     if (myTimer.IsPastDue) {
@@ -19,12 +17,12 @@ module.exports = async function (context, myTimer) {
             atLoader.getTimeTable().then(
                 function (busResult) {
                     resultString += busStringMakeUp(busResult);
+                    context.log('[DEBUG LABLE: RESULE STRING '+resultString+']');
                     sender.sendBody(resultString);
+                    process.exit(0);//finished the progeam once message send
                 });
         }
     );
-
-    return context.log('[DEBUG LABLE: FUNCTION END]');
 };
 
 //helpers

@@ -2,11 +2,22 @@
 Every daily seny you a message to your honeright before you wake up. It contains the weather as well as your route bus time. This project is used for Phase 1 Assignment MSA 2019. 
 
 ### Prerequisites
+In order to make this project suitable for you, you need to change some key data in the codes. Replace info in the {}
 
-Change in index.js
-
+ATLoader.js
 ```
-//do this later
+stopCode: '{Your bus stop}',
+targetBus: '{Your bus}',
+routeIds: '{The route id of your bus}',
+apiKey: '{You AT developer API key}',
+targetTime: '{e.g. 6:30 a.m.}'
+```
+
+WeatherLoader.js
+```
+apiKey: '{Your openweathermap API Key}',
+zipCode: '{Your post code}',
+countryCode: '{you country code in lower case e.g. nz}'
 ```
 
 ## Deployment
