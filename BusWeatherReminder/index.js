@@ -1,5 +1,7 @@
 let sender = require('./MessageSender.js');
 let weatherLoader = require('./WeatherLoader.js');
+let atLoader = require('./ATLoader.js');
+
 //function entry 
 module.exports = async function (context, myTimer) {
     //Default code
@@ -7,23 +9,40 @@ module.exports = async function (context, myTimer) {
     if (myTimer.IsPastDue) {
         context.log('JavaScript is running late!');
     }
-    weatherLoader.getJSON().then(
-        function (result) {
-            context.log('testing');
-            var list = result.list[0].main;
-            let temp = weatherLoader.kelvinToCelsius(list.temp).toFixed(2);
-            let lowTemp = weatherLoader.kelvinToCelsius(list.temp_min).toFixed(2);
-            let highTemp = weatherLoader.kelvinToCelsius(list.temp_max).toFixed(2);
-            let resultString = 'Current temp is ' + temp + '°C' +
-                ' Higher temp is ' + highTemp + '°C' +
-                ' lower temp is ' + lowTemp + '°C' +
-                '. Today most likely is ' + result.list[0].weather[0].description;
-            sender.sendBody(resultString);
+
+    //My code start here
+    weatherLoader.getWeatherResult().then(
+        function (weatherResult) {
+            let resultString = weatherStringMakeUp(weatherResult)
+            atLoader.getTimeTable().then(
+                function (busResult) {
+                    resultString += busStringMakeUp(busResult);
+                    sender.sendBody(resultString);
+                });
         }
     );
 
-    //My code start here
     context.log('[DEBUG LABLE: FUNCTION HEAD]');
     return context.log('[DEBUG LABLE: FUNCTION END]');
 };
+
+//helpers
+function weatherStringMakeUp(result) {
+    var list = result.list[0].main;
+    let temp = weatherLoader.kelvinToCelsius(list.temp).toFixed(2);
+    let lowTemp = weatherLoader.kelvinToCelsius(list.temp_min).toFixed(2);
+    let highTemp = weatherLoader.kelvinToCelsius(list.temp_max).toFixed(2);
+    let resultString = 'Hey good morning, current temperature is ' + temp + '°C' +
+        ', today\'s highest temperature is ' + highTemp + '°C' +
+        ', and lowest temperature is ' + lowTemp + '°C' +
+        '. Today\'s Weather is: ' + result.list[0].weather[0].description + '.';
+    return resultString;
+}
+function busStringMakeUp(result) {
+    var targetBus = atLoader.targetBus;
+    var targetStop = atLoader.stopCode;
+    var targetBusTime = atLoader.getNextBus(result);
+    let resultString = 'Your bus ' + targetBus + ' will arrive at stop ' + targetStop + ' at ' + targetBusTime+'.';
+    return resultString
+}
 

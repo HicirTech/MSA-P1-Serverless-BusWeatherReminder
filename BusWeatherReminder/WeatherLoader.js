@@ -11,7 +11,7 @@ var weatherLoader = {
     kelvinToCelsius: function (kelvin) {
         return kelvin - 273.15;
     },
-    getJSON: function () {
+    getWeatherResult: function () {
         var url = this.getUrl();
         return req(url)
             .then(function (response) {
@@ -21,7 +21,3 @@ var weatherLoader = {
 }
 
 module.exports = weatherLoader;
-
-var url = weatherLoader.getUrl();
-
-console.log(url);
