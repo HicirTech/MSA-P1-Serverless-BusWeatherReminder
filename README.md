@@ -22,7 +22,7 @@ countryCode: '{you country code in lower case e.g. nz}'
 
 ## Deployment
 
-This project should be deploy serverlessly on Azure, after you deploy the project, please use console to run ```npm install`` to install the nodejs dependence
+This project should be deploy serverlessly on Azure, after you deploy the project, please use console to run `npm install` to install the nodejs dependence
 
 ## Built With
 
