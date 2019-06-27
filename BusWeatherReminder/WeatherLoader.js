@@ -5,7 +5,7 @@ var weatherLoader = {
     zipCode: '1010',
     countryCode: 'nz',
     getUrl: function () {
-        return url = 'http://api.openweathermap.org/data/2.5/forecast?zip=' +
+        return url = 'https://api.openweathermap.org/data/2.5/forecast?zip=' +
             this.zipCode + ',' + this.countryCode + '&appid=' + this.apiKey;
     },
     kelvinToCelsius: function (kelvin) {
@@ -21,3 +21,7 @@ var weatherLoader = {
 }
 
 module.exports = weatherLoader;
+
+var url = weatherLoader.getUrl();
+
+console.log(url);
