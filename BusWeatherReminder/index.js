@@ -43,7 +43,7 @@ function weatherStringMakeUp(result) {
     let temp = weatherLoader.kelvinToCelsius(list.temp).toFixed(2);
     let lowTemp = weatherLoader.kelvinToCelsius(list.temp_min).toFixed(2);
     let highTemp = weatherLoader.kelvinToCelsius(list.temp_max).toFixed(2);
-    let resultString = 'Hey good morning, current temperature is ' + temp + '°C' +
+    let resultString = '( ͡° ͜ʖ ͡°)Hey good morning, current temperature is ' + temp + '°C' +
         // ', today\'s highest temperature is ' + highTemp + '°C' +
         // ', and lowest temperature is ' + lowTemp + '°C' +
         '. Today\'s Weather is: ' + result.list[0].weather[0].description + '. ';

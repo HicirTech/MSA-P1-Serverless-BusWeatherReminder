@@ -5,7 +5,7 @@ var ATstopReciver = {
     targetBus: '70',
     routeIds: '07006-20190613111133_v80.31',
     //apiKey: process.env['ATApiKey'],
-    targetTime: '1:00 p.m.',
+    targetTime: '12:40 p.m.',
     getHeader: function (apiKey) {
         return { 'Ocp-Apim-Subscription-Key': apiKey };
     },
