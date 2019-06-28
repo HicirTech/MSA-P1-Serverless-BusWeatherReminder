@@ -1,7 +1,7 @@
 var req = require('request-promise');
 
 var weatherLoader = {
-    apiKey: '291bab08e606853f0c06bd27e98e8be6',
+    apiKey: process.env['weatherAPIkey'],
     zipCode: '1010',
     countryCode: 'nz',
     getUrl: function () {

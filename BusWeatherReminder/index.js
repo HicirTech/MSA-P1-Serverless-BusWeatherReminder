@@ -12,11 +12,6 @@ module.exports = async function (context, myTimer) {
     // context.log(process.env['twilioAuthToken']);
 
     //My code start here
-
-    var twilioAccountSid = process.env['twilioAccountSid'];
-    var twilioAuthToken = process.env['twilioAuthToken'];
-    context.log(twilioAccountSid);
-    context.log(twilioAuthToken);
     weatherLoader.getWeatherResult().then(
         function (weatherResult) {
             let resultString = weatherStringMakeUp(weatherResult)
@@ -49,7 +44,7 @@ function busStringMakeUp(result) {
     var targetStop = atLoader.stopCode;
     var targetBusTime = atLoader.getNextBus(result);
     let resultString = 'Your bus ' + targetBus + ' will arrive at stop ' + targetStop + ' at ' + targetBusTime;
-    return resultString + 'Have a good day';
+    return resultString + ' Have a nice day!';
 }
 weatherLoader.getWeatherResult().then(
     function (weatherResult) {
