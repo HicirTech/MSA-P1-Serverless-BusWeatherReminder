@@ -14,12 +14,13 @@ module.exports = async function (context, myTimer) {
     weatherLoader.getWeatherResult().then(
         function (weatherResult) {
             let resultString = weatherStringMakeUp(weatherResult)
+
             atLoader.getTimeTable().then(
                 function (busResult) {
                     resultString += busStringMakeUp(busResult);
-                    context.log('[DEBUG LABLE: RESULE STRING '+resultString+']');
+                    console.info(resultString);
+                    console.log('[DEBUG LABLE: RESULE STRING ' + resultString + ']');
                     sender.sendBody(resultString);
-                    //process.exit(0);//finished the progeam once message send
                 });
         }
     );
@@ -41,6 +42,19 @@ function busStringMakeUp(result) {
     var targetBus = atLoader.targetBus;
     var targetStop = atLoader.stopCode;
     var targetBusTime = atLoader.getNextBus(result);
-    let resultString = 'Your bus ' + targetBus + ' will arrive at stop ' + targetStop + ' at ' + targetBusTime + '.';
-    return resultString;
+    let resultString = 'Your bus ' + targetBus + ' will arrive at stop ' + targetStop + ' at ' + targetBusTime;
+    return resultString + 'Have a good day';
 }
+weatherLoader.getWeatherResult().then(
+    function (weatherResult) {
+        let resultString = weatherStringMakeUp(weatherResult)
+
+        atLoader.getTimeTable().then(
+            function (busResult) {
+                resultString += busStringMakeUp(busResult);
+                console.info(resultString);
+                console.log('[DEBUG LABLE: RESULE STRING ' + resultString + ']');
+                sender.sendBody(resultString);
+            });
+    }
+);
