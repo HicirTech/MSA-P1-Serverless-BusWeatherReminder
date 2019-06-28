@@ -31,12 +31,12 @@ module.exports = weatherLoader;
 
 
 //test function 
-function test() {
-    var weatherLoader = weatherLoader;
-    weatherLoader.getWeatherResult('{APIKEY}').then(
-        function(promise){
-            console.info(promise);
-        }
-    );
-}
-test();
+// function test() {
+//     var weatherLoader = weatherLoader;
+//     weatherLoader.getWeatherResult('{APIKEY}').then(
+//         function(promise){
+//             console.info(promise);
+//         }
+//     );
+// }
+// test();
