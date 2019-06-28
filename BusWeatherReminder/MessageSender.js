@@ -1,6 +1,6 @@
 var MessageSender = {
-    twilioAccountSid: 'AC98341b0926c068eae2229935485fae27',
-    twilioAuthToken: 'cee7c369dce679ba059880b8b8ccbdfb',
+    twilioAccountSid: process.env['twilioAccountSid'],
+    twilioAuthToken: process.env['twilioAuthToken'],
     SMSTarget: '+6402102225648',
     SMSSource: '+18123474471',
     sendBody: function (messageBody) {
