@@ -19,8 +19,8 @@ module.exports = MessageSender;
 
 
 //test function
-// function test(){
-//     var sender = MessageSender;
-//     sender.sendBody('{SID}','{TOKEN}','TEST');
-// }
-// test();
+function test(){
+    var sender = MessageSender;
+    sender.sendBody('{SID}','{TOKEN}','TEST');
+}
+//test();

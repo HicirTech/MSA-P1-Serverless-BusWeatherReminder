@@ -57,22 +57,7 @@ function weatherStringMakeUp(result) {
 function busStringMakeUp(result) {
     var targetBus = atLoader.targetBus;
     var targetStop = atLoader.stopCode;
-    var targetBusTime = atLoader.getNextBus(result);x
+    var targetBusTime = atLoader.getNextBus(result);
     let resultString = 'Your bus ' + targetBus + ' will arrive at stop ' + targetStop + ' at ' + targetBusTime;
     return resultString + ' Have a nice day!';
 }
-
-
-// weatherLoader.getWeatherResult().then(
-//     function (weatherResult) {
-//         let resultString = weatherStringMakeUp(weatherResult)
-
-//         atLoader.getTimeTable().then(
-//             function (busResult) {
-//                 resultString += busStringMakeUp(busResult);
-//                 console.info(resultString);
-//                 console.log('[DEBUG LABLE: RESULE STRING ' + resultString + ']');
-//                 sender.sendBody(resultString);
-//             });
-//     }
-// );

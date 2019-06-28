@@ -56,11 +56,11 @@ module.exports = ATstopReciver;
 
 
 //test function, used for test the code
-// function test(){
-//     ATstopReciver.getTimeTable('{KEY}').then(
-//         function (result) {
-//             console.log(ATstopReciver.getNextBus(result));
-//         });
-// }
+function test(){
+    ATstopReciver.getTimeTable('{KEY}').then(
+        function (result) {
+            console.log(ATstopReciver.getNextBus(result));
+        });
+}
 
-// test();
+//test();
