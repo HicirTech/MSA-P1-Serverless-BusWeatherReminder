@@ -1,10 +1,8 @@
 var MessageSender = {
-    twilioAccountSid: process.env['twilioAccountSid'],
-    twilioAuthToken: process.env['twilioAuthToken'],
     SMSTarget: '+6402102225648',
     SMSSource: '+18123474471',
-    sendBody: function (messageBody) {
-        twilioClient = require('twilio')(this.twilioAccountSid, this.twilioAuthToken);
+    sendBody: function (twilioAccountSid,twilioAuthToken,messageBody) {
+        twilioClient = require('twilio')(twilioAccountSid, twilioAuthToken);
         twilioClient.messages.create({
             to: this.SMSTarget,
             from: this.SMSSource,

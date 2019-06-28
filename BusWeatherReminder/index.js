@@ -9,9 +9,13 @@ module.exports = async function (context, myTimer) {
     if (myTimer.IsPastDue) {
         context.log('JavaScript is running late!');
     }
-   // context.log(process.env['twilioAuthToken']);
+    // context.log(process.env['twilioAuthToken']);
 
     //My code start here
+
+    var twilioAccountSid = process.env['twilioAccountSid'];
+    var twilioAuthToken = process.env['twilioAuthToken'];
+    context.log(process.env['twilioAccountSid']);
     weatherLoader.getWeatherResult().then(
         function (weatherResult) {
             let resultString = weatherStringMakeUp(weatherResult)
@@ -21,7 +25,7 @@ module.exports = async function (context, myTimer) {
                     resultString += busStringMakeUp(busResult);
                     console.info(resultString);
                     console.log('[DEBUG LABLE: RESULE STRING ' + resultString + ']');
-                    sender.sendBody(resultString);
+                    sender.sendBody(twilioAccountSid,twilioAuthToken,resultString);
                 });
         }
     );
