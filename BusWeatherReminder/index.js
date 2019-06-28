@@ -27,19 +27,19 @@ module.exports = async function (context, myTimer) {
 
 
 
-    //My code start here
-    weatherLoader.getWeatherResult(weatherApiKey).then(
-        function (weatherResult) {
-            let resultString = weatherStringMakeUp(weatherResult)
-            atLoader.getTimeTable(ATkey).then(
-                function (busResult) {
-                    resultString += busStringMakeUp(busResult);
-                    console.info(resultString);
-                    context.log('[DEBUG LABLE: RESULE STRING ' + resultString + ']');
-                    sender.sendBody(twilioAccountSid, twilioAuthToken, resultString);
-                });
-        }
-    );
+    // //My code start here
+    // weatherLoader.getWeatherResult(weatherApiKey).then(
+    //     function (weatherResult) {
+    //         let resultString = weatherStringMakeUp(weatherResult)
+    //         atLoader.getTimeTable(ATkey).then(
+    //             function (busResult) {
+    //                 resultString += busStringMakeUp(busResult);
+    //                 console.info(resultString);
+    //                 context.log('[DEBUG LABLE: RESULE STRING ' + resultString + ']');
+    //                 sender.sendBody(twilioAccountSid, twilioAuthToken, resultString);
+    //             });
+    //     }
+    // );
 };
 
 //helpers
@@ -63,7 +63,7 @@ function weatherStringMakeUp(result) {
 function busStringMakeUp(result) {
     var targetBus = atLoader.targetBus;
     var targetStop = atLoader.stopCode;
-    var targetBusTime = atLoader.getNextBus(result);
+    var targetBusTime = atLoader.getNextBus(result);x
     let resultString = 'Your bus ' + targetBus + ' will arrive at stop ' + targetStop + ' at ' + targetBusTime;
     return resultString + ' Have a nice day!';
 }
