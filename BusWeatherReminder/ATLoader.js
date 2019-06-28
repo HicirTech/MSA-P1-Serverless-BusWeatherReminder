@@ -40,5 +40,5 @@ var ATstopReciver = {
     }
 }
 module.exports = ATstopReciver;
-ATstopReciver.getTimeTable('897d78125e664385b01574e30347e035').then(
+ATstopReciver.getTimeTable('').then(
     function (result) { console.log(ATstopReciver.getNextBus(result)); });
