@@ -19,7 +19,7 @@ module.exports = async function (context, myTimer) {
                     resultString += busStringMakeUp(busResult);
                     context.log('[DEBUG LABLE: RESULE STRING '+resultString+']');
                     sender.sendBody(resultString);
-                    process.exit(0);//finished the progeam once message send
+                    //process.exit(0);//finished the progeam once message send
                 });
         }
     );
