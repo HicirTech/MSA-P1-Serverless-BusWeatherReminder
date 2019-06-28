@@ -1,12 +1,13 @@
 var req = require('request-promise');
 
+const apiKey =  process.env['weatherAPIkey'];
 var weatherLoader = {
-    apiKey: process.env['weatherAPIkey'],
+    //apiKey: process.env['weatherAPIkey'],
     zipCode: '1010',
     countryCode: 'nz',
     getUrl: function () {
         return url = 'https://api.openweathermap.org/data/2.5/forecast?zip=' +
-            this.zipCode + ',' + this.countryCode + '&appid=' + process.env['weatherAPIkey'];
+            this.zipCode + ',' + this.countryCode + '&appid=' + apiKey;
     },
     kelvinToCelsius: function (kelvin) {
         return kelvin - 273.15;

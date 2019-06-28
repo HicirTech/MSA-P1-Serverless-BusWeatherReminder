@@ -1,13 +1,14 @@
 var request = require('request-promise');
+const apiKey = process.env['ATApiKey'];
 
 var ATstopReciver = {
     stopCode: '7147',
     targetBus: '27H',
     routeIds: '02707-20190613111133_v80.31',
-    apiKey: process.env['ATApiKey'],
+    //apiKey: process.env['ATApiKey'],
     targetTime: '6:30 a.m.',
     getHeader: function () {
-        return { 'Ocp-Apim-Subscription-Key': process.env['ATApiKey']};
+        return { 'Ocp-Apim-Subscription-Key': apiKey};
     },
     getUrl: function () {
         return 'https://api.at.govt.nz/v2/gtfs/btf/timetable?route_ids=' + this.routeIds +
