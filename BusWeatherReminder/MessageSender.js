@@ -9,7 +9,7 @@ var MessageSender = {
             to: this.SMSTarget,
             from: this.SMSSource,
             body: messageBody
-        }).then(message => console.log(message.sid));
+        })
     }
 }
 module.exports = MessageSender;
