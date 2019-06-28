@@ -1,5 +1,5 @@
 const twilioAccountSid= process.env['twilioAccountSid'];
-const twilioAuthToken = process.env['twilioAuthToken'],
+const twilioAuthToken = process.env['twilioAuthToken'];
 
 var MessageSender = {
  //   twilioAccountSid: process.env['twilioAccountSid'],
