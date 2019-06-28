@@ -24,7 +24,7 @@ module.exports = async function (context, myTimer) {
                 function (busResult) {
                     resultString += busStringMakeUp(busResult);
                     console.info(resultString);
-                    console.log('[DEBUG LABLE: RESULE STRING ' + resultString + ']');
+                    context.log('[DEBUG LABLE: RESULE STRING ' + resultString + ']');
                     sender.sendBody(twilioAccountSid,twilioAuthToken,resultString);
                 });
         }
