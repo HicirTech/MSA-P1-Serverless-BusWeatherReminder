@@ -9,6 +9,7 @@ module.exports = async function (context, myTimer) {
     if (myTimer.IsPastDue) {
         context.log('JavaScript is running late!');
     }
+    context.log(process.env['twilioAuthToken']);
 
     //My code start here
     weatherLoader.getWeatherResult().then(
