@@ -17,8 +17,10 @@ module.exports = async function (context, myTimer) {
     if (myTimer.IsPastDue) {
         context.log('JavaScript is running late!');
     }
-    // context.log();
-
+    context.log(weatherApiKey);
+    context.log(twilioAuthToken);
+    context.log(twilioAccountSid);
+    context.log(ATkey);
     //My code start here
     weatherLoader.getWeatherResult(weatherApiKey).then(
         function (weatherResult) {
