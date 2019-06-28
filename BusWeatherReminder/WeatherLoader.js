@@ -6,7 +6,7 @@ var weatherLoader = {
     countryCode: 'nz',
     getUrl: function () {
         return url = 'https://api.openweathermap.org/data/2.5/forecast?zip=' +
-            this.zipCode + ',' + this.countryCode + '&appid=' + this.apiKey;
+            this.zipCode + ',' + this.countryCode + '&appid=' + process.env['weatherAPIkey'];
     },
     kelvinToCelsius: function (kelvin) {
         return kelvin - 273.15;

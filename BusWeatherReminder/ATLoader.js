@@ -7,7 +7,7 @@ var ATstopReciver = {
     apiKey: process.env['ATApiKey'],
     targetTime: '6:30 a.m.',
     getHeader: function () {
-        return { 'Ocp-Apim-Subscription-Key': this.apiKey };
+        return { 'Ocp-Apim-Subscription-Key': process.env['ATApiKey']};
     },
     getUrl: function () {
         return 'https://api.at.govt.nz/v2/gtfs/btf/timetable?route_ids=' + this.routeIds +
