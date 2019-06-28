@@ -1,13 +1,12 @@
 var request = require('request-promise');
-const apiKey = process.env['ATApiKey'];
+//const apiKey = process.env['ATApiKey'];
 
 var ATstopReciver = {
     stopCode: '7147',
     targetBus: '27H',
     routeIds: '02707-20190613111133_v80.31',
-    //apiKey: process.env['ATApiKey'],
     targetTime: '6:30 a.m.',
-    getHeader: function () {
+    getHeader: function (apiKey) {
         return { 'Ocp-Apim-Subscription-Key': apiKey};
     },
     getUrl: function () {
@@ -15,9 +14,9 @@ var ATstopReciver = {
             '&stop_code=' + this.stopCode +
             '&route_short_name=' + this.targetBus;
     },
-    getTimeTable: function () {
+    getTimeTable: function (apiKey) {
         var url = this.getUrl();
-        var header = this.getHeader();
+        var header = this.getHeader(apiKey);
         return request({ headers: header, url: url, method: 'GET' }).then(function (response) {
             var date = new Date();
             var resultSet = JSON.parse(response);

@@ -3,25 +3,33 @@ let weatherLoader = require('./WeatherLoader.js');
 let atLoader = require('./ATLoader.js');
 
 //function entry 
+
+
+const weatherApiKey =  process.env['weatherAPIkey'];
+const twilioAuthToken =  process.env['twilioAuthToken'];
+const twilioAccountSid = process.env['twilioAccountSid'];
+const ATkey = process.env['ATApiKey'];
+
+
 module.exports = async function (context, myTimer) {
     //Default code
     var timeStamp = new Date().toISOString();
     if (myTimer.IsPastDue) {
         context.log('JavaScript is running late!');
     }
-    // context.log(process.env['twilioAuthToken']);
+    // context.log();
 
     //My code start here
-    weatherLoader.getWeatherResult().then(
+    weatherLoader.getWeatherResult(weatherApiKey).then(
         function (weatherResult) {
             let resultString = weatherStringMakeUp(weatherResult)
 
-            atLoader.getTimeTable().then(
+            atLoader.getTimeTable(ATkey).then(
                 function (busResult) {
                     resultString += busStringMakeUp(busResult);
                     console.info(resultString);
                     context.log('[DEBUG LABLE: RESULE STRING ' + resultString + ']');
-                    sender.sendBody(resultString);
+                    sender.sendBody(twilioAccountSid,twilioAuthToken,resultString);
                 });
         }
     );
