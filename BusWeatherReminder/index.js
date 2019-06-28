@@ -15,7 +15,8 @@ module.exports = async function (context, myTimer) {
 
     var twilioAccountSid = process.env['twilioAccountSid'];
     var twilioAuthToken = process.env['twilioAuthToken'];
-    context.log(process.env['twilioAccountSid']);
+    context.log(twilioAccountSid);
+    context.log(twilioAuthToken);
     weatherLoader.getWeatherResult().then(
         function (weatherResult) {
             let resultString = weatherStringMakeUp(weatherResult)
