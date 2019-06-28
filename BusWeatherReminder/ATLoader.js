@@ -1,22 +1,22 @@
 var request = require('request-promise');
-//const apiKey = process.env['ATApiKey'];
 
 var ATstopReciver = {
-    stopCode: '7147',
-    targetBus: '27H',
-    routeIds: '02707-20190613111133_v80.31',
-    targetTime: '6:30 a.m.',
-    getHeader: function (apiKey) {
-        return { 'Ocp-Apim-Subscription-Key': apiKey};
+    stopCode: '7140',
+    targetBus: '70',
+    routeIds: '07006-20190613111133_v80.31',
+    apiKey: process.env['ATApiKey'],
+    targetTime: '1:00 p.m.',
+    getHeader: function () {
+        return { 'Ocp-Apim-Subscription-Key': this.apiKey };
     },
     getUrl: function () {
         return 'https://api.at.govt.nz/v2/gtfs/btf/timetable?route_ids=' + this.routeIds +
             '&stop_code=' + this.stopCode +
             '&route_short_name=' + this.targetBus;
     },
-    getTimeTable: function (apiKey) {
+    getTimeTable: function () {
         var url = this.getUrl();
-        var header = this.getHeader(apiKey);
+        var header = this.getHeader();
         return request({ headers: header, url: url, method: 'GET' }).then(function (response) {
             var date = new Date();
             var resultSet = JSON.parse(response);
