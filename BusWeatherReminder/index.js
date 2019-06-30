@@ -24,12 +24,10 @@ module.exports = async function (context, myTimer) {
     context.log(twilioAccountSid);
     context.log(ATkey);
 
-    //resultString = getARandomFace();
-    let resultString = getARandomFace();
-
     //My code start here
     weatherLoader.getWeatherResult(weatherApiKey).then(
         function (weatherResult) {
+            let resultString = getARandomFace();
             resultString += weatherStringMakeUp(weatherResult);
             atLoader.getTimeTable(ATkey).then(
                 function (busResult) {
