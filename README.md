@@ -2,6 +2,8 @@
 Every daily seny you a message to your honeright before you wake up. It contains the weather as well as your route bus time. This project is used for Phase 1 Assignment MSA 2019. 
 
 ### Prerequisites
+
+<strike>
 In order to make this project suitable for you, you need to change some key data in the codes. Replace info in the {}
 
 ATLoader.js
@@ -19,7 +21,7 @@ apiKey: '{Your openweathermap API Key}',
 zipCode: '{Your post code}',
 countryCode: '{you country code in lower case e.g. nz}'
 ```
-
+</strike>
 ## Deployment
 
 This project should be deploy serverlessly on Azure, after you deploy the project, please use console to run `npm install` to install the nodejs dependence
