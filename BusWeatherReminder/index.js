@@ -1,6 +1,7 @@
 let sender = require('./MessageSender.js');
 let weatherLoader = require('./WeatherLoader.js');
 let atLoader = require('./ATLoader.js');
+fs = require('fs');
 //let textFace = require('./jsonFaceLoader.js');
 
 //function entry 
@@ -46,8 +47,8 @@ module.exports = async function (context, myTimer) {
 function weatherStringMakeUp(result) {
     var list = result.list[0].main;
     let temp = weatherLoader.kelvinToCelsius(list.temp).toFixed(2);
-    //let resultString = textFace.getARandomFace();
-    let resultString = '  Hey good morning, current temperature is ' + temp + '°C' +
+    let resultString = textFace.getARandomFace();
+    resultString += '  Hey good morning, current temperature is ' + temp + '°C' +
         '. Today\'s Weather is: ' + result.list[0].weather[0].description + '. ';
     return resultString;
 }
@@ -60,4 +61,11 @@ function busStringMakeUp(result) {
     var targetBusTime = atLoader.getNextBus(result);
     let resultString = 'Your bus ' + targetBus + ' will arrive at stop ' + targetStop + ' at ' + targetBusTime;
     return resultString + ' Have a nice day!';
+}
+
+//load from a textFace.json to get a random face string
+function getARandomFace() {
+    rawdata = fs.readFileSync('./textFace.json');
+    faces = JSON.parse(rawdata);
+    return (faces.face[Math.floor(Math.random() * faces.face.length)]);
 }
