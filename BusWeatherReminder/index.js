@@ -1,7 +1,7 @@
 let sender = require('./MessageSender.js');
 let weatherLoader = require('./WeatherLoader.js');
 let atLoader = require('./ATLoader.js');
-fs = require('fs');
+let fs = require('fs');
 //let textFace = require('./jsonFaceLoader.js');
 
 //function entry 
