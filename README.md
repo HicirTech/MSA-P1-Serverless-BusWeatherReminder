@@ -12,9 +12,9 @@ Create serverless logic with Azure Functions ✔
 <img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/screenshots/vTask1.jpg" width="1024"><br />
 Execute an Azure Function with triggers✔
 <br />
-<img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/screenshots/vTask2.jpg" width="1024"><br />
+<img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/screenshots/vTask2.png" width="1024"><br />
 Chain Azure functions together using input and output bindings✔
-<br /><img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/screenshots/vTask3.jpg" width="1024"><br />
+<br /><img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/screenshots/vTask3.png" width="1024"><br />
 
 ### screenshots of submition [not done yet]
 
