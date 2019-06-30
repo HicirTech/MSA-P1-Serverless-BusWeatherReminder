@@ -27,7 +27,7 @@ module.exports = async function (context, myTimer) {
 
 
     //My code start here
-    context.log(weatherLoader.getWeatherResult(weatherApiKey).then(
+    weatherLoader.getWeatherResult(weatherApiKey).then(
         function (weatherResult) {
             let resultString = weatherStringMakeUp(weatherResult);
             atLoader.getTimeTable(ATkey).then(
@@ -36,7 +36,7 @@ module.exports = async function (context, myTimer) {
                     sender.sendBody(twilioAccountSid, twilioAuthToken, resultString);
                 });
         }
-    ));
+    );
 };
 
 //helpers
