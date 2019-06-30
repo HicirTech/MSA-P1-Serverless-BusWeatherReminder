@@ -1,6 +1,7 @@
 let sender = require('./MessageSender.js');
 let weatherLoader = require('./WeatherLoader.js');
 let atLoader = require('./ATLoader.js');
+let textFace = require('./jsonFaceLoader.js');
 
 //function entry 
 const weatherApiKey = process.env['weatherAPIkey'];
@@ -45,9 +46,8 @@ module.exports = async function (context, myTimer) {
 function weatherStringMakeUp(result) {
     var list = result.list[0].main;
     let temp = weatherLoader.kelvinToCelsius(list.temp).toFixed(2);
-    let lowTemp = weatherLoader.kelvinToCelsius(list.temp_min).toFixed(2);
-    let highTemp = weatherLoader.kelvinToCelsius(list.temp_max).toFixed(2);
-    let resultString = '( ͡° ͜ʖ ͡°)Hey good morning, current temperature is ' + temp + '°C' +
+    let resultString = textFace.getARandomFace();
+    resultString+= '  Hey good morning, current temperature is ' + temp + '°C' +
         '. Today\'s Weather is: ' + result.list[0].weather[0].description + '. ';
     return resultString;
 }
