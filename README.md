@@ -3,7 +3,14 @@ Every daily seny you a message to your honeright before you wake up. It contains
 
 ### Prerequisites
 
-<strike>
+Considering the safty of credential keys, the code of this project are changed to used environment variables. All there environment variable are located at the top of `index.js` as `const` variable. You will need to add you keys to you function configuration. Details is under deployment section.
+```
+const weatherApiKey = process.env['weatherAPIkey'];
+const twilioAuthToken = process.env['twilioAuthToken'];
+const twilioAccountSid = process.env['twilioAccountSid'];
+const ATkey = process.env['ATApiKey'];
+```
+
 In order to make this project suitable for you, you need to change some key data in the codes. Replace info in the {}
 
 ATLoader.js
@@ -11,20 +18,21 @@ ATLoader.js
 stopCode: '{Your bus stop}',
 targetBus: '{Your bus}',
 routeIds: '{The route id of your bus}',
-apiKey: '{You AT developer API key}',
+</strike>apiKey: '{You AT developer API key}',</strike>
 targetTime: '{e.g. 6:30 a.m.}'
 ```
 
 WeatherLoader.js
 ```
-apiKey: '{Your openweathermap API Key}',
+<strike>apiKey: '{Your openweathermap API Key}',</strike>
 zipCode: '{Your post code}',
 countryCode: '{you country code in lower case e.g. nz}'
 ```
-</strike>
+
 ## Deployment
 
-This project should be deploy serverlessly on Azure, after you deploy the project, please use console to run `npm install` to install the nodejs dependence
+This project should be deploy serverlessly on using Function app, after you deploy the project, please use console to run `npm install` to install the nodejs dependence.
+You will also need to add your key to the configuration of the function app. To do that, you need to go into your `portal`, select `Platform features` tag at the top, then select `Configuration`. Down in `Application settings`, add variable `ATApiKey`,`twilioAccountSid`,`twilioAuthToken`,`weatherAPIkey`.
 
 ## Built With
 
@@ -34,6 +42,6 @@ This project should be deploy serverlessly on Azure, after you deploy the projec
 * [Twillo](https://twilio.com/) - Cloud communications platform used for messsaging
 * [OpenWeatherMap](https://openweathermap.org/) - Weather data sourece for this project
 * [Auckland Transport API](https://dev-portal.at.govt.nz/) - Bus route data sourece for this project
-
+* [textfac.es](https://textfac.es/) -  Text face sourece for this project
 ## Authors
 * **Zeting Luo** - *Initial work* - [HicirTech](https://github.com/HicirTech)
