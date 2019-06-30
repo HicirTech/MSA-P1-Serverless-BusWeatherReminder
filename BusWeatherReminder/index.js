@@ -2,7 +2,6 @@ let sender = require('./MessageSender.js');
 let weatherLoader = require('./WeatherLoader.js');
 let atLoader = require('./ATLoader.js');
 let jsonData = require('./textFace.json');
-//let textFace = require('./jsonFaceLoader.js');
 
 //function entry 
 const weatherApiKey = process.env['weatherAPIkey'];
@@ -25,8 +24,8 @@ module.exports = async function (context, myTimer) {
     context.log(twilioAccountSid);
     context.log(ATkey);
 
-     //resultString = getARandomFace();
-    context.log(jsonData);
+    //resultString = getARandomFace();
+    context.log(getARandomFace());
 
     //My code start here
     weatherLoader.getWeatherResult(weatherApiKey).then(
@@ -66,7 +65,6 @@ function busStringMakeUp(result) {
 
 //load from a textFace.json to get a random face string
 function getARandomFace() {
-    rawdata = fs.readFileSync('textFace.json');
-    faces = JSON.parse(rawdata);
+    faces =jsonData;
     return (faces.face[Math.floor(Math.random() * faces.face.length)]);
 }
