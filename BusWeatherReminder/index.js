@@ -66,7 +66,7 @@ function busStringMakeUp(result) {
 
 //load from a textFace.json to get a random face string
 function getARandomFace() {
-    rawdata = fs.readFileSync('./textFace.json');
+    rawdata = fs.readFileSync('textFace.json');
     faces = JSON.parse(rawdata);
     return (faces.face[Math.floor(Math.random() * faces.face.length)]);
 }
