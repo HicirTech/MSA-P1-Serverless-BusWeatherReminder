@@ -25,16 +25,17 @@ module.exports = async function (context, myTimer) {
     context.log(twilioAccountSid);
     context.log(ATkey);
 
-
+    let resultString = getARandomFace();
+    context.log(resultString);
 
     //My code start here
     weatherLoader.getWeatherResult(weatherApiKey).then(
         function (weatherResult) {
-            let resultString = weatherStringMakeUp(weatherResult);
+            resultString = weatherStringMakeUp(weatherResult);
             atLoader.getTimeTable(ATkey).then(
                 function (busResult) {
                     resultString += busStringMakeUp(busResult);
-                    context.log(resultString);
+                   
                     sender.sendBody(twilioAccountSid, twilioAuthToken, resultString);
                 });
         }
@@ -48,8 +49,7 @@ module.exports = async function (context, myTimer) {
 function weatherStringMakeUp(result) {
     var list = result.list[0].main;
     let temp = weatherLoader.kelvinToCelsius(list.temp).toFixed(2);
-    let resultString = textFace.getARandomFace();
-    resultString += '  Hey good morning, current temperature is ' + temp + '°C' +
+    let resultString = '  Hey good morning, current temperature is ' + temp + '°C' +
         '. Today\'s Weather is: ' + result.list[0].weather[0].description + '. ';
     return resultString;
 }
