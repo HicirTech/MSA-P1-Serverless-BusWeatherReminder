@@ -69,4 +69,4 @@ add variable `ATApiKey`,`twilioAccountSid`,`twilioAuthToken`,`weatherAPIkey`. <b
 * [textfac.es](https://textfac.es/) -  Text face sourece for this project
 
 ## Authors
-* **Zeting Luo** - *Initial work* - [HicirTech](https://github.com/HicirTech)
+* **Zeting Luo** - [HicirTech](https://github.com/HicirTech)
