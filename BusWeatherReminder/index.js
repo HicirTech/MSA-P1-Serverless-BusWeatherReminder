@@ -65,6 +65,6 @@ function busStringMakeUp(result) {
 
 //load from a textFace.json to get a random face string
 function getARandomFace() {
-    faces =jsonData;
+    let faces =jsonData;
     return (faces.face[Math.floor(Math.random() * faces.face.length)]);
 }
