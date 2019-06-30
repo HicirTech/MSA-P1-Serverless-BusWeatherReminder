@@ -4,8 +4,8 @@ Here is the code: https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherRemin
 ### screenshots of the project output ✔
 
 
-![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/result1.jpg)
-        
+<img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/result1.jpg" width="256">
+
 ![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/result2.jpg)
 ### screenshots of the learning videos [not done yet]
 
