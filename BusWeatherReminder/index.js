@@ -1,7 +1,7 @@
 let sender = require('./MessageSender.js');
 let weatherLoader = require('./WeatherLoader.js');
 let atLoader = require('./ATLoader.js');
-let fs = require('fs');
+let jsonData = require('./textFace.json');
 //let textFace = require('./jsonFaceLoader.js');
 
 //function entry 
@@ -26,7 +26,7 @@ module.exports = async function (context, myTimer) {
     context.log(ATkey);
 
     let resultString = getARandomFace();
-    context.log(resultString);
+    context.log(jsonData);
 
     //My code start here
     weatherLoader.getWeatherResult(weatherApiKey).then(
@@ -36,7 +36,7 @@ module.exports = async function (context, myTimer) {
                 function (busResult) {
                     resultString += busStringMakeUp(busResult);
                    
-                    sender.sendBody(twilioAccountSid, twilioAuthToken, resultString);
+                   // sender.sendBody(twilioAccountSid, twilioAuthToken, resultString);
                 });
         }
     );
