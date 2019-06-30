@@ -19,7 +19,7 @@ Chain Azure functions together using input and output bindings✔
 ### screenshots of submition [not done yet]
 
 # About the project - Daily bus and weather SMS reminder
-Every daily seny you a message to your honeright before you wake up. It contains the weather as well as your route bus time. This project is used for Phase 1 Assignment MSA 2019. 
+Every daily seny you a message to your phone right before you wake up. It contains the weather as well as your route bus time. This project is used for Phase 1 Assignment MSA 2019. 
 
 ### Prerequisites
 Considering the safty of credential keys, the code of this project are changed to use environment variables. All there environment variable are located at the top of `index.js` as `const` variable. You will need to add you keys to you function configuration. Details is under deployment section.
