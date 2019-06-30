@@ -62,6 +62,7 @@ add variable `ATApiKey`,`twilioAccountSid`,`twilioAuthToken`,`weatherAPIkey`. <b
 ## Built With
 * [Azure](https://azure.microsoft.com/) - The cloud computing platform used
 * [Azure Function](https://azure.microsoft.com/en-in/services/functions/) - The serverless compute platform used
+
 * [Node.js](https://nodejs.org/) -  JavaScript runtime stack used
 * [Twillo](https://twilio.com/) - Cloud communications platform used for messsaging
 * [OpenWeatherMap](https://openweathermap.org/) - Weather data sourece for this project
@@ -70,3 +71,6 @@ add variable `ATApiKey`,`twilioAccountSid`,`twilioAuthToken`,`weatherAPIkey`. <b
 
 ## Authors
 * **Zeting Luo** - [HicirTech](https://github.com/HicirTech)
+
+## Thanks
+* [Microsoft Learn](https://docs.microsoft.com/en-us/learn/) - Huge thanks to microsoft for the knowledge
