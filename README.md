@@ -4,9 +4,8 @@ Here is the code: https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherRemin
 ### screenshots of the project output ✔
 
 
-<img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/result1.jpg" width="256">
+<img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/result1.jpg" width="256"><img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/result2.jpg" width="256">
 
-![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/result2.jpg)
 ### screenshots of the learning videos [not done yet]
 
 ### screenshots of submition [not done yet]
@@ -48,17 +47,13 @@ SMSSource: '{Your source phone number}',
 ## Deployment
 This project should be deploy serverlessly on using Function app, after you deploy the project, please use console to run `npm install` to install the nodejs dependence.
 You will also need to add your key to the configuration of the function app. To do that, you need to go into your `portal`, select `Platform features` tag at the top,
-![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/pfTag.png) 
-
+<img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/pfTag.png" width="256"> 
 then select `Configuration`. 
-![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/configuration.png) 
-
+<img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/configuration.png" width="256"> 
 Down in `Application settings`, 
-![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/new.png)
-
+<img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/new.png" width="256"> 
 add variable `ATApiKey`,`twilioAccountSid`,`twilioAuthToken`,`weatherAPIkey`.
-![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/vari.png)
-
+<img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/vari.png" width="256"> 
 ## Built With
 * [Azure](https://azure.microsoft.com/) - The cloud computing platform used
 * [Azure Function](https://azure.microsoft.com/en-in/services/functions/) - The serverless compute platform used
