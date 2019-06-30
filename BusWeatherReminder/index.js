@@ -34,6 +34,7 @@ module.exports = async function (context, myTimer) {
             atLoader.getTimeTable(ATkey).then(
                 function (busResult) {
                     resultString += busStringMakeUp(busResult);
+                    context.log(resultString);
                     sender.sendBody(twilioAccountSid, twilioAuthToken, resultString);
                 });
         }
