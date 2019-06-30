@@ -25,17 +25,17 @@ module.exports = async function (context, myTimer) {
     context.log(ATkey);
 
     //resultString = getARandomFace();
-    context.log(getARandomFace());
+    let resultString = getARandomFace();
 
     //My code start here
     weatherLoader.getWeatherResult(weatherApiKey).then(
         function (weatherResult) {
-            let resultString = weatherStringMakeUp(weatherResult);
+            resultString += weatherStringMakeUp(weatherResult);
             atLoader.getTimeTable(ATkey).then(
                 function (busResult) {
                     resultString += busStringMakeUp(busResult);
                    
-                   // sender.sendBody(twilioAccountSid, twilioAuthToken, resultString);
+                    sender.sendBody(twilioAccountSid, twilioAuthToken, resultString);
                 });
         }
     );
