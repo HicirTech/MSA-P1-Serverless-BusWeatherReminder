@@ -34,7 +34,8 @@ SMSSource: '{Your source phone number}',
 
 ## Deployment
 This project should be deploy serverlessly on using Function app, after you deploy the project, please use console to run `npm install` to install the nodejs dependence.
-You will also need to add your key to the configuration of the function app. To do that, you need to go into your `portal`, select `Platform features` tag at the top, then select `Configuration`. Down in `Application settings`, add variable `ATApiKey`,`twilioAccountSid`,`twilioAuthToken`,`weatherAPIkey`.
+You will also need to add your key to the configuration of the function app. To do that, you need to go into your `portal`, select `Platform features` tag at the top,
+![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/pfTag.png) then select `Configuration`. ![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/configuration.png) Down in `Application settings`, add variable `ATApiKey`,`twilioAccountSid`,`twilioAuthToken`,`weatherAPIkey`.![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/new.png)
 
 ## Built With
 * [Azure](https://azure.microsoft.com/) - The cloud computing platform used
