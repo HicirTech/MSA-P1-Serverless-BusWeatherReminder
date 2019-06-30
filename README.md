@@ -26,6 +26,12 @@ zipCode: '{Your post code}',
 countryCode: '{you country code in lower case e.g. nz}'
 ```
 
+MessageSender.js
+```
+SMSTarget: '{Your phone number}',
+SMSSource: '{Your source phone number}',
+```
+
 ## Deployment
 This project should be deploy serverlessly on using Function app, after you deploy the project, please use console to run `npm install` to install the nodejs dependence.
 You will also need to add your key to the configuration of the function app. To do that, you need to go into your `portal`, select `Platform features` tag at the top, then select `Configuration`. Down in `Application settings`, add variable `ATApiKey`,`twilioAccountSid`,`twilioAuthToken`,`weatherAPIkey`.
