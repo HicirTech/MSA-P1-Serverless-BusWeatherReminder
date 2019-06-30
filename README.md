@@ -1,4 +1,14 @@
-# Daily bus and weather SMS reminder
+# About the assignment
+### code available on GitHub ✔ 
+Here is the code: https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/tree/master/BusWeatherReminder
+### screenshots of the project output ✔
+![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/result1.jpg) 
+![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/result2.jpg) 
+### screenshots of the learning videos [not done yet]
+
+### screenshots of submition [not done yet]
+
+# About the project - Daily bus and weather SMS reminder
 Every daily seny you a message to your honeright before you wake up. It contains the weather as well as your route bus time. This project is used for Phase 1 Assignment MSA 2019. 
 
 ### Prerequisites
@@ -35,7 +45,10 @@ SMSSource: '{Your source phone number}',
 ## Deployment
 This project should be deploy serverlessly on using Function app, after you deploy the project, please use console to run `npm install` to install the nodejs dependence.
 You will also need to add your key to the configuration of the function app. To do that, you need to go into your `portal`, select `Platform features` tag at the top,
-![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/pfTag.png) then select `Configuration`. ![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/configuration.png) Down in `Application settings`, add variable `ATApiKey`,`twilioAccountSid`,`twilioAuthToken`,`weatherAPIkey`.![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/new.png)
+![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/pfTag.png) 
+then select `Configuration`. ![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/configuration.png) 
+Down in `Application settings`, ![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/new.png)
+add variable `ATApiKey`,`twilioAccountSid`,`twilioAuthToken`,`weatherAPIkey`.![alt text](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/vari.png)
 
 ## Built With
 * [Azure](https://azure.microsoft.com/) - The cloud computing platform used
