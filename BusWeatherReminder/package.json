@@ -11,6 +11,7 @@
     "url": "git+https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder.git"
   },
   "author": "Zeting Luo",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/issues"
   },
