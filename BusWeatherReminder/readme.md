@@ -1,11 +1,14 @@
-# TimerTrigger - JavaScript
+# BusWeatherReminder - Node.js
+Function `BusWeatherReminder` is made up by 4 module of codes.
 
-The `TimerTrigger` makes it incredibly easy to have your functions executed on a schedule. This sample demonstrates a simple use case of calling your function every 5 minutes.
+`WeatherLoader.js` - Response for get weather data from OpenWeatherMap API, so real time weather date can be use for message
+`MessageSender.js` - Response for send out the message by using twilio API
+`ATLoader.js` - Response for get bus data from AT Developer API
+`index.js` - Response for cooperating weather and bus data, load text face from json file, and use `MessageSender` to sent out the message.
 
 ## How it works
-
-For a `TimerTrigger` to work, you provide a schedule in the form of a [cron expression](https://en.wikipedia.org/wiki/Cron#CRON_expression)(See the link for full details). A cron expression is a string with 6 separate expressions which represent a given schedule via patterns. The pattern we use to represent every 5 minutes is `0 */5 * * * *`. This, in plain text, means: "When seconds is equal to 0, minutes is divisible by 5, for any hour, day of the month, month, day of the week, or year".
-
-## Learn more
-
-<TODO> Documentation
+Because it is a timmer function, it will be triggered at every day 10.00 a.m. You can see this by looking into `function.json`
+```
+ "schedule": "0 0 10 * * *"	
+```
+So every day 10am at morning, you will get all the brief you need for today.

@@ -34,7 +34,7 @@ module.exports = weatherLoader;
 function test() {
     var weatherLoader = weatherLoader;
     weatherLoader.getWeatherResult('{APIKEY}').then(
-        function(promise){
+        function (promise) {
             console.info(promise);
         }
     );

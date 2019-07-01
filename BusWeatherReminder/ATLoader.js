@@ -11,7 +11,7 @@ var ATstopReciver = {
     getHeader: function (apiKey) {
         return { 'Ocp-Apim-Subscription-Key': apiKey };
     },
-    
+
     //combine data to make up url
     getUrl: function () {
         return 'https://api.at.govt.nz/v2/gtfs/btf/timetable?route_ids=' + this.routeIds +
@@ -56,7 +56,7 @@ module.exports = ATstopReciver;
 
 
 //test function, used for test the code
-function test(){
+function test() {
     ATstopReciver.getTimeTable('{KEY}').then(
         function (result) {
             console.log(ATstopReciver.getNextBus(result));

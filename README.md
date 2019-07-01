@@ -2,8 +2,6 @@
 ### code available on GitHub ✔ 
 Here is the code: https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/tree/master/BusWeatherReminder
 ### screenshots of the project output ✔
-
-
 <img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/result1.jpg" width="256">    <img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/result2.jpg" width="256">
 
 ### screenshots of the learning videos ✔

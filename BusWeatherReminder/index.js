@@ -17,13 +17,6 @@ module.exports = async function (context, myTimer) {
         context.log('JavaScript is running late!');
     }
 
-
-    //debug code, deleted later
-    context.log(weatherApiKey);
-    context.log(twilioAuthToken);
-    context.log(twilioAccountSid);
-    context.log(ATkey);
-
     //My code start here
     weatherLoader.getWeatherResult(weatherApiKey).then(
         function (weatherResult) {
@@ -32,7 +25,6 @@ module.exports = async function (context, myTimer) {
             atLoader.getTimeTable(ATkey).then(
                 function (busResult) {
                     resultString += busStringMakeUp(busResult);
-                   
                     sender.sendBody(twilioAccountSid, twilioAuthToken, resultString);
                 });
         }
@@ -63,6 +55,6 @@ function busStringMakeUp(result) {
 
 //load from a textFace.json to get a random face string
 function getARandomFace() {
-    let faces =jsonData;
+    let faces = jsonData;
     return (faces.face[Math.floor(Math.random() * faces.face.length)]);
 }
