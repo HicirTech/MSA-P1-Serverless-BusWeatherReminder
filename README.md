@@ -5,6 +5,9 @@ Here is the code: https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherRemin
 <img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/result1.jpg" width="256">    <img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/result2.jpg" width="256">
 
 ### screenshots of the learning videos ✔
+Microsoft Learn Dashboard with XP and username✔
+<br />
+<img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/screenshots/exp.png" width="765"><br />
 Create serverless logic with Azure Functions ✔
 <br />
 <img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/screenshots/vTask1.jpg" width="765"><br />
@@ -14,7 +17,9 @@ Execute an Azure Function with triggers✔
 Chain Azure functions together using input and output bindings✔
 <br /><img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/screenshots/vTask3.png" width="765"><br />
 Other Videos - [all done✔](https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/screenshots/vTask-ALL.png) 
-### screenshots of submition [not done yet]
+### screenshots of submition ✔
+<br />
+<img src="https://github.com/HicirTech/MSA-P1-Serverless-BusWeatherReminder/blob/master/img/submit2.png" width="765"> <br />
 
 # About the project - Daily bus and weather SMS reminder
 Every daily seny you a message to your phone right before you wake up. It contains the weather as well as your route bus time. This project is used for Phase 1 Assignment MSA 2019. 
