@@ -21,7 +21,5 @@ module.exports = MessageSender;
 //test function
 function test() {
     var sender = MessageSender;
-
-    sender.sendBody('AC98341b0926c068eae2229935485fae27', 'c0cb68d38cd0540e73d3bcaceb2441c5', 'TEST');
 }
 // test();
